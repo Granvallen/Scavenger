@@ -1,0 +1,66 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://script/EventVBoxContainer.gd" type="Script" id=1]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[node name="EventVBoxContainer" type="VBoxContainer"]
+margin_right = 850.0
+margin_bottom = 222.0
+rect_min_size = Vector2( 0, 200 )
+size_flags_horizontal = 2
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="EventLabel" type="Label" parent="."]
+margin_right = 119.0
+margin_bottom = 24.0
+size_flags_horizontal = 0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.976471, 1, 0, 1 )
+text = "[事件 #1]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="EventMarginContainer" type="MarginContainer" parent="."]
+margin_top = 28.0
+margin_right = 850.0
+margin_bottom = 222.0
+rect_min_size = Vector2( 850, 194 )
+size_flags_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="EventMarginContainer"]
+margin_right = 850.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 850, 194 )
+size_flags_horizontal = 2
+color = Color( 1, 1, 1, 0.117647 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardScrollContainer" type="ScrollContainer" parent="EventMarginContainer"]
+margin_right = 850.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 850, 194 )
+size_flags_horizontal = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardGridContainer" type="GridContainer" parent="EventMarginContainer/CardScrollContainer"]
+margin_right = 830.0
+margin_bottom = 194.0
+rect_min_size = Vector2( 830, 0 )
+size_flags_horizontal = 2
+size_flags_vertical = 3
+columns = 4

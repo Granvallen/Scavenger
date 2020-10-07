@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scene/DeckVBoxContainer.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scene/HelpVBoxContainer.tscn" type="PackedScene" id=5]
+[ext_resource path="res://script/PlayBoard.gd" type="Script" id=6]
+
+[node name="PlayBoard" type="MarginContainer"]
+margin_right = 900.0
+margin_bottom = 726.0
+rect_min_size = Vector2( 900, 720 )
+size_flags_horizontal = 2
+size_flags_vertical = 2
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 10
+custom_constants/margin_bottom = 10
+script = ExtResource( 6 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PlayBoardScrollContainer" type="ScrollContainer" parent="."]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 890.0
+margin_bottom = 716.0
+follow_focus = true
+scroll_horizontal_enabled = false
+
+[node name="PlayBoardVBoxContainer" type="VBoxContainer" parent="PlayBoardScrollContainer"]
+size_flags_horizontal = 0
+size_flags_vertical = 0
+
+[node name="DeckScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 890.0
+margin_bottom = 716.0
+
+[node name="DeckVBoxContainer" parent="DeckScrollContainer" instance=ExtResource( 4 )]
+margin_top = 0.0
+margin_bottom = 706.0
+
+[node name="HelpScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 890.0
+margin_bottom = 716.0
+
+[node name="HelpVBoxContainer" parent="HelpScrollContainer" instance=ExtResource( 5 )]
+margin_top = 0.0
+margin_bottom = 706.0

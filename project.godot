@@ -1,0 +1,97 @@
+; Engine configuration file.
+; It's best edited using the editor UI and not directly,
+; since the parameters that go here are not all obvious.
+;
+; Format:
+;   [section] ; section goes between []
+;   param=value ; assign values to parameters
+
+config_version=4
+
+_global_script_classes=[ {
+"base": "VBoxContainer",
+"class": "ActionVBoxContainer",
+"language": "GDScript",
+"path": "res://script/ActionVBoxContainer.gd"
+}, {
+"base": "Object",
+"class": "CardDealer",
+"language": "GDScript",
+"path": "res://script/CardDealer.gd"
+}, {
+"base": "Control",
+"class": "CardGUI",
+"language": "GDScript",
+"path": "res://script/CardGUI.gd"
+}, {
+"base": "Object",
+"class": "CardsData",
+"language": "GDScript",
+"path": "res://data/CardsData.gd"
+}, {
+"base": "MarginContainer",
+"class": "ChatMarginContainer",
+"language": "GDScript",
+"path": "res://script/ChatMarginContainer.gd"
+}, {
+"base": "Object",
+"class": "Deck",
+"language": "GDScript",
+"path": "res://script/plan/Deck.gd"
+}, {
+"base": "Control",
+"class": "DeckGUI",
+"language": "GDScript",
+"path": "res://script/DeckGUI.gd"
+}, {
+"base": "VBoxContainer",
+"class": "EventVBoxContainer",
+"language": "GDScript",
+"path": "res://script/EventVBoxContainer.gd"
+}, {
+"base": "Object",
+"class": "GameSetting",
+"language": "GDScript",
+"path": "res://data/GameSetting.gd"
+}, {
+"base": "MarginContainer",
+"class": "PlayBoard",
+"language": "GDScript",
+"path": "res://script/PlayBoard.gd"
+}, {
+"base": "MarginContainer",
+"class": "SideBoard",
+"language": "GDScript",
+"path": "res://script/SideBoard.gd"
+}, {
+"base": "VBoxContainer",
+"class": "TurnBox",
+"language": "GDScript",
+"path": "res://script/TurnBox.gd"
+} ]
+_global_script_class_icons={
+"ActionVBoxContainer": "",
+"CardDealer": "",
+"CardGUI": "",
+"CardsData": "",
+"ChatMarginContainer": "",
+"Deck": "",
+"DeckGUI": "",
+"EventVBoxContainer": "",
+"GameSetting": "",
+"PlayBoard": "",
+"SideBoard": "",
+"TurnBox": ""
+}
+
+[application]
+
+config/name="Scavenger"
+run/main_scene="res://scene/Main.tscn"
+config/icon="res://resource/icon.png"
+
+[display]
+
+window/size/width=1080
+window/size/height=720
+window/size/resizable=false

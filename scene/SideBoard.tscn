@@ -1,0 +1,202 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://script/SideBoard.gd" type="Script" id=2]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[sub_resource type="DynamicFontData" id=3]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=4]
+size = 24
+font_data = SubResource( 3 )
+
+[sub_resource type="DynamicFontData" id=5]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=6]
+size = 24
+font_data = SubResource( 5 )
+
+[node name="SideBoard" type="MarginContainer"]
+anchor_left = 0.833
+anchor_right = 0.833
+margin_left = 0.360046
+margin_right = 185.36
+margin_bottom = 720.0
+rect_min_size = Vector2( 174, 720 )
+size_flags_horizontal = 3
+custom_constants/margin_right = 10
+custom_constants/margin_top = 10
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 10
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="SideVBoxContainer" type="VBoxContainer" parent="."]
+margin_top = 10.0
+margin_right = 174.0
+margin_bottom = 710.0
+
+[node name="StateVBoxContainer" type="VBoxContainer" parent="SideVBoxContainer"]
+margin_right = 174.0
+margin_bottom = 52.0
+
+[node name="StateLabel" type="Label" parent="SideVBoxContainer/StateVBoxContainer"]
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "---[状态]---"
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="HPHBoxContainer" type="HBoxContainer" parent="SideVBoxContainer/StateVBoxContainer"]
+margin_top = 28.0
+margin_right = 174.0
+margin_bottom = 52.0
+size_flags_vertical = 2
+size_flags_stretch_ratio = 6.81
+
+[node name="HPLabel" type="Label" parent="SideVBoxContainer/StateVBoxContainer/HPHBoxContainer"]
+margin_right = 85.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "HP"
+align = 1
+autowrap = true
+
+[node name="HPvalueLable" type="Label" parent="SideVBoxContainer/StateVBoxContainer/HPHBoxContainer"]
+margin_left = 89.0
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "20"
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LogVBoxContainer" type="VBoxContainer" parent="SideVBoxContainer"]
+margin_top = 56.0
+margin_right = 174.0
+margin_bottom = 616.0
+size_flags_vertical = 3
+
+[node name="LogLabel" type="Label" parent="SideVBoxContainer/LogVBoxContainer"]
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 1
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "---[日志]---"
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="LogRichTextLabel" type="RichTextLabel" parent="SideVBoxContainer/LogVBoxContainer"]
+margin_top = 28.0
+margin_right = 174.0
+margin_bottom = 560.0
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 4 )
+custom_colors/default_color = Color( 0.101961, 1, 0, 1 )
+
+[node name="DeckVBoxContainer" type="VBoxContainer" parent="SideVBoxContainer"]
+margin_top = 620.0
+margin_right = 174.0
+margin_bottom = 700.0
+
+[node name="DeckLabel" type="Label" parent="SideVBoxContainer/DeckVBoxContainer"]
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+size_flags_vertical = 2
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "---[卡组]---"
+align = 1
+autowrap = true
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TotalHBoxContainer" type="HBoxContainer" parent="SideVBoxContainer/DeckVBoxContainer"]
+margin_top = 28.0
+margin_right = 174.0
+margin_bottom = 52.0
+
+[node name="TotalLabel" type="Label" parent="SideVBoxContainer/DeckVBoxContainer/TotalHBoxContainer"]
+margin_right = 85.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "总数"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="TotalvalueLabel" type="Label" parent="SideVBoxContainer/DeckVBoxContainer/TotalHBoxContainer"]
+margin_left = 89.0
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "20"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}
+
+[node name="AvailableHBoxContainer" type="HBoxContainer" parent="SideVBoxContainer/DeckVBoxContainer"]
+margin_top = 56.0
+margin_right = 174.0
+margin_bottom = 80.0
+size_flags_horizontal = 3
+
+[node name="AvailableLabel" type="Label" parent="SideVBoxContainer/DeckVBoxContainer/AvailableHBoxContainer"]
+margin_right = 85.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "剩余"
+align = 1
+
+[node name="AvailablevalueLabel" type="Label" parent="SideVBoxContainer/DeckVBoxContainer/AvailableHBoxContainer"]
+margin_left = 89.0
+margin_right = 174.0
+margin_bottom = 24.0
+size_flags_horizontal = 3
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "20"
+align = 1
+__meta__ = {
+"_editor_description_": ""
+}

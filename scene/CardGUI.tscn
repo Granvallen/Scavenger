@@ -1,0 +1,111 @@
+[gd_scene load_steps=9 format=2]
+
+[ext_resource path="res://script/CardGUI.gd" type="Script" id=1]
+[ext_resource path="res://Script/CardTextureButton.gd" type="Script" id=2]
+[ext_resource path="res://resource/card.png" type="Texture" id=3]
+
+[sub_resource type="DynamicFontData" id=1]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+font_data = SubResource( 1 )
+
+[sub_resource type="StyleBoxFlat" id=3]
+content_margin_left = 10.0
+content_margin_right = 10.0
+content_margin_top = 10.0
+content_margin_bottom = 10.0
+bg_color = Color( 0, 0, 0, 1 )
+border_color = Color( 0, 0, 0, 1 )
+corner_radius_top_right = 10
+corner_radius_bottom_right = 10
+corner_radius_bottom_left = 10
+shadow_color = Color( 0.423529, 0.423529, 0.423529, 0.843137 )
+shadow_size = 5
+
+[sub_resource type="DynamicFontData" id=4]
+font_path = "res://resource/Zpix.ttf"
+
+[sub_resource type="DynamicFont" id=5]
+size = 24
+outline_color = Color( 0, 0, 0, 1 )
+font_data = SubResource( 4 )
+
+[node name="CardGUI" type="Control"]
+margin_right = 120.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 120, 190 )
+size_flags_horizontal = 6
+size_flags_vertical = 6
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true,
+"_edit_use_anchors_": false
+}
+
+[node name="CardMarginContainer" type="MarginContainer" parent="."]
+margin_right = 120.0
+margin_bottom = 190.0
+rect_min_size = Vector2( 120, 190 )
+custom_constants/margin_top = 5
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardTextureButton" type="TextureButton" parent="CardMarginContainer"]
+margin_left = 10.0
+margin_top = 5.0
+margin_right = 110.0
+margin_bottom = 155.0
+size_flags_horizontal = 4
+size_flags_vertical = 2
+texture_normal = ExtResource( 3 )
+script = ExtResource( 2 )
+
+[node name="CardShortcutLabel" type="Label" parent="CardMarginContainer/CardTextureButton"]
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -21.0
+margin_top = 5.0
+margin_right = 21.0
+margin_bottom = 29.0
+size_flags_horizontal = 4
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
+text = "[?]"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardPopupPanel" type="PopupPanel" parent="CardMarginContainer/CardTextureButton"]
+margin_left = 46.0
+margin_top = 51.0
+margin_right = 327.0
+margin_bottom = 382.0
+mouse_filter = 2
+custom_styles/panel = SubResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CardRichTextLabel" type="RichTextLabel" parent="CardMarginContainer/CardTextureButton/CardPopupPanel"]
+margin_left = 10.0
+margin_top = 10.0
+margin_right = 271.0
+margin_bottom = 321.0
+mouse_filter = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_fonts/normal_font = SubResource( 5 )
+custom_colors/default_color = Color( 0.101961, 1, 0, 1 )
+text = "收费监管平台是的日光苏东坡荣光但如果的故事屁股的的生日哦个技术的,荣光破日收到高坡上的给啊啊啊啊是
+
+ありがとう"
+__meta__ = {
+"_edit_use_anchors_": false,
+"_editor_description_": ""
+}
