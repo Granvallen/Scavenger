@@ -1,11 +1,22 @@
 extends MarginContainer
 class_name ChatMarginContainer
 
+var _chatLabel : RichTextLabel
 
-func _ready():
+
+func _ready() -> void:
 	pass
 
-func get_class():
+func init(text : String = "") -> ChatMarginContainer:
+	_chatLabel = $ChatRichTextLabel
+	_chatLabel.text = text
+	return self
+
+func set_text(text : String) -> void:
+	_chatLabel.text = text
+
+
+func get_class() -> String:
 	return "ChatMarginContainer"
 
 #func _process(delta):

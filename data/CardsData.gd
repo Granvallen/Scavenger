@@ -17,7 +17,7 @@ func get_cards_initdict(ids : Array, deck_type : int) -> Array:
 		card["isevent"] = isevent
 		card["iscovered"] = iscovered
 		cards.append(card)
-		
+
 	return cards
 
 func get_num_cards() -> int:
@@ -28,14 +28,15 @@ const coverdir := "res://resource/cards/"
 const backcover := "res://resource/cards/back.png"
 const skillsdesc := {
 	0 : "无特殊效果.",
-	1 : "选择一张可用行动卡, 其能力值翻倍.",
+	1 : "选择一张可用行动卡,其能力值翻倍.",
 }
 
+# 卡牌
 const _cards := [
 	{
 		"id" : 0,
 		"event" : {
-			"desc" : "下雨了, 检查避难所漏水情况...",
+			"desc" : "下雨了,检查避难所漏水情况...",
 			"difficulty" : 0,
 		},
 		"action" : {
@@ -47,7 +48,7 @@ const _cards := [
 	{
 		"id" : 1,
 		"event" : {
-			"desc" : "下雨了, 检查避难所漏水情况...",
+			"desc" : "下雨了,检查避难所漏水情况...",
 			"difficulty" : 1,
 		},
 		"action" : {
@@ -59,7 +60,31 @@ const _cards := [
 	{
 		"id" : 2,
 		"event" : {
-			"desc" : "下雨了, 检查避难所漏水情况...",
+			"desc" : "下雨了,检查避难所漏水情况...",
+			"difficulty" : 3,
+		},
+		"action" : {
+			"desc" : "修理.",
+			"capacity" : 3,
+			"skill" : 1,
+		},
+	},
+	{
+		"id" : 3,
+		"event" : {
+			"desc" : "下雨了,检查避难所漏水情况...",
+			"difficulty" : 3,
+		},
+		"action" : {
+			"desc" : "修理.",
+			"capacity" : 3,
+			"skill" : 1,
+		},
+	},
+	{
+		"id" : 4,
+		"event" : {
+			"desc" : "下雨了,检查避难所漏水情况...",
 			"difficulty" : 3,
 		},
 		"action" : {

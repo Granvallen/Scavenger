@@ -1,9 +1,9 @@
 extends Control
 class_name DeckGUI
 
-enum DeckType {EVENT, ACTION, DROP}
+signal draw_card(cards)
 
-var _cardgui := preload("res://scene/CardGUI.tscn")
+enum DeckType {EVENT, ACTION, DROP}
 
 # 子节点
 var _deckTB : TextureButton
@@ -16,10 +16,10 @@ var cover : Resource
 var decktype : int
 var shortcut : int
 
-func _ready():
+func _ready() -> void:
 	pass
 
-func init(deck_initdict : Dictionary) -> void:
+func init(deck_initdict : Dictionary) -> DeckGUI:
 	_deckTB = $DeckMarginContainer/DeckTextureButton
 	_deckLabel = $DeckMarginContainer/DeckTextureButton/DeckShortcutLabel
 	_deckPanel = $DeckMarginContainer/DeckTextureButton/DeckPopupPanel
@@ -34,18 +34,28 @@ func init(deck_initdict : Dictionary) -> void:
 	_deckLabel.text = "[{shortcut}]".format({"shortcut" : char(shortcut)})
 	
 	_deckTB.texture_normal = cover
+	# 快捷键
 	_deckTB.shortcut = ShortCut.new()
 	_deckTB.shortcut.shortcut = InputEventKey.new()
 	_deckTB.shortcut.shortcut.scancode = shortcut
 	
-	# 初始化卡牌
-	var newcard : CardGUI
-	for card_initdict in deck_initdict["cards_initdict"]:
-		newcard = _cardgui.instance()
-		newcard.init(card_initdict)
+	# 卡牌
+	_cards = deck_initdict["cards"]
 	
-		_cards.append(newcard)
+	_signal_connect()
+	return self
+	
+func _draw_card() -> void:
+	emit_signal("draw_card", draw(1))
+	
+func _signal_connect() -> void:
+	_deckTB.connect("pressed", self, "_draw_card")
 
+func draw(num_card : int) -> Array:
+	var draw_cards : Array
+	draw_cards = _cards.slice(-num_card, _cards.size())
+	_cards = _cards.slice(0, -num_card - 1)
+	return draw_cards
 
 func get_num_cards() -> int:
 	return _cards.size()

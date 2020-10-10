@@ -27,13 +27,13 @@ __meta__ = {
 }
 
 [node name="ChatRichTextLabel" type="RichTextLabel" parent="."]
-margin_top = 10.0
+margin_top = 47.0
 margin_right = 850.0
-margin_bottom = 110.0
-rect_min_size = Vector2( 100, 0 )
+margin_bottom = 72.0
+rect_min_size = Vector2( 850, 0 )
+size_flags_horizontal = 3
 size_flags_vertical = 4
 custom_fonts/normal_font = SubResource( 2 )
 custom_colors/default_color = Color( 0.101961, 1, 0, 1 )
-text = "[Gob]:算法士大夫文人分让他软的人粉丝Eros通过日晷TV和上帝乳房欧斯乳房和死哦如法i发hi是符号i速发货日古体诗u而覅哦啊热负荷首日封爱上凤凰瑞丰对方核对过偶是他故意很对哦规划ui的规划哦推动和入党后i入党给i殴打和乳房后i粉丝夫人四乳房和iOS覅是发送方"
 fit_content_height = true
 scroll_active = false

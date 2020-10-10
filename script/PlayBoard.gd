@@ -1,10 +1,7 @@
 extends MarginContainer
 class_name PlayBoard
 
-
-
-
-onready var _playboardVBC := $PlayBoardScrollContainer/PlayBoardVBoxContainer
+onready var playboardVBC := $PlayBoardScrollContainer/PlayBoardVBoxContainer
 
 func _ready():
 	pass
