@@ -4,7 +4,7 @@
 
 [node name="TurnBox" type="VBoxContainer"]
 margin_right = 850.0
-margin_bottom = 578.0
+size_flags_vertical = 0
 script = ExtResource( 4 )
 __meta__ = {
 "_edit_use_anchors_": false

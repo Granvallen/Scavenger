@@ -1,6 +1,8 @@
 extends MarginContainer
 class_name SideBoard
 
+signal game_over
+
 onready var foodLabel : Label = $SideVBoxContainer/StateVBoxContainer/FoodHBoxContainer/FoodvalueLable
 onready var deckVBC : VBoxContainer = $SideVBoxContainer/DeckVBoxContainer
 onready var totalLabel : Label = $SideVBoxContainer/DeckVBoxContainer/TotalHBoxContainer/TotalvalueLabel
@@ -15,9 +17,16 @@ func get_class() -> String:
 func game_setup() -> void:
 	pass
 
-func update_deckcount(total : int, available : int) -> void:
-	totalLabel.text = String(total)
-	availableLabel.text = String(available)
+func update_deckcount(actiondeck : DeckGUI) -> void:
+	totalLabel.text = String(actiondeck.totalnumcards)
+	availableLabel.text = String(actiondeck.get_num_cards())
+	
+func update_food(food : int) -> void:
+	food += int(foodLabel.text)	
+	foodLabel.text = String(food if food > 0 else 0)
+	
+	if food <= 0:
+		emit_signal("game_over")
 
 #func _process(delta):
 #	pass

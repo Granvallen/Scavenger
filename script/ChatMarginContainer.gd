@@ -3,7 +3,6 @@ class_name ChatMarginContainer
 
 var _chatLabel : RichTextLabel
 
-
 func _ready() -> void:
 	pass
 
@@ -14,7 +13,6 @@ func init(text : String = "") -> ChatMarginContainer:
 
 func set_text(text : String) -> void:
 	_chatLabel.text = text
-
 
 func get_class() -> String:
 	return "ChatMarginContainer"

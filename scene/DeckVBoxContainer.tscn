@@ -1,7 +1,4 @@
-[gd_scene load_steps=14 format=2]
-
-[ext_resource path="res://scene/CardGUI.tscn" type="PackedScene" id=1]
-
+[gd_scene load_steps=13 format=2]
 
 [sub_resource type="DynamicFontData" id=1]
 font_path = "res://resource/Zpix.ttf"
@@ -112,7 +109,7 @@ custom_styles/normal = SubResource( 12 )
 custom_fonts/font = SubResource( 8 )
 custom_colors/font_color = Color( 0.101961, 1, 0, 1 )
 enabled_focus_mode = 0
-text = "返回[Q]"
+text = "确认[Q]"
 __meta__ = {
 "_editor_description_": ""
 }
@@ -139,39 +136,3 @@ rect_min_size = Vector2( 0, 200 )
 size_flags_horizontal = 3
 size_flags_vertical = 2
 columns = 6
-
-[node name="Card" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 9.0
-margin_top = 5.0
-margin_right = 129.0
-margin_bottom = 195.0
-
-[node name="Card2" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 151.0
-margin_top = 5.0
-margin_right = 271.0
-margin_bottom = 195.0
-
-[node name="Card3" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 293.0
-margin_top = 5.0
-margin_right = 413.0
-margin_bottom = 195.0
-
-[node name="Card4" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 435.0
-margin_top = 5.0
-margin_right = 555.0
-margin_bottom = 195.0
-
-[node name="Card5" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 577.0
-margin_top = 5.0
-margin_right = 697.0
-margin_bottom = 195.0
-
-[node name="Card6" parent="DeckMarginContainer/CardGridContainer" instance=ExtResource( 1 )]
-margin_left = 719.0
-margin_top = 5.0
-margin_right = 839.0
-margin_bottom = 195.0

@@ -20,11 +20,11 @@ __meta__ = {
 }
 
 [node name="PlayBoardScrollContainer" type="ScrollContainer" parent="."]
+visible = false
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 890.0
 margin_bottom = 716.0
-follow_focus = true
 scroll_horizontal_enabled = false
 
 [node name="PlayBoardVBoxContainer" type="VBoxContainer" parent="PlayBoardScrollContainer"]
@@ -32,7 +32,6 @@ size_flags_horizontal = 0
 size_flags_vertical = 0
 
 [node name="DeckScrollContainer" type="ScrollContainer" parent="."]
-visible = false
 margin_left = 10.0
 margin_top = 10.0
 margin_right = 890.0

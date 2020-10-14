@@ -4,7 +4,8 @@ class_name GameSetting
 func get_deck_setting(decktype : int) -> Dictionary:
 	var deck : Dictionary = decks[decktype]
 	deck["decktype"] = decktype
-	
+	deck["cards"] = []
+	deck["dropcards"] = []
 	return deck
 
 const num_init_actioncards := 2
@@ -22,11 +23,6 @@ const decks := {
 		"shortcut" : KEY_D,
 	},
 	DeckGUI.DeckType.EVENT : {
-		"visible" : false,
-		"cover" : "res://resource/cards/back.png",
-		"shortcut" : KEY_UNKNOWN,
-	},
-	DeckGUI.DeckType.DROP : {
 		"visible" : false,
 		"cover" : "res://resource/cards/back.png",
 		"shortcut" : KEY_UNKNOWN,
